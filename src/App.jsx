@@ -1,13 +1,7 @@
-import { useState } from 'react'
-import './App.css'
-import StartQuestions from './pages/StartQuestions'
-
+import './App.css';
+import StartQuestions from '@/pages/StartQuestions';
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <StartQuestions/>
-  )
+  return <StartQuestions />;
 }
 
-export default App
+export default App;

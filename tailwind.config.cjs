@@ -6,10 +6,6 @@ module.exports = {
   ],
   theme: {
     extend: {
-      width: {
-        '100px': '100px'
-      },
-
     },
 
     textShadow: {
