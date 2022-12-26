@@ -26,7 +26,7 @@ const PersonalInfoForm = (props) => {
         label='სახელი*'
         name='firstname'
         placeholder='იოსებ'
-        {...register('firstName', {
+        register={register('firstName', {
           required: 'სახელის ველის შევსება სავალდებულოა',
           minLength: {
             value: 3,
@@ -40,7 +40,7 @@ const PersonalInfoForm = (props) => {
         label='გვარი*'
         name='lastName'
         placeholder='ჯუღაშვილი'
-        {...register('lastName', {
+        register={register('lastName', {
           required: 'გვარის ველის შევსება სავალდებულოა',
           minLength: {
             value: 3,
@@ -55,7 +55,7 @@ const PersonalInfoForm = (props) => {
         label='მეილი*'
         name='email'
         placeholder='იოსებ'
-        {...register('email', {
+        register={register('email', {
           required: 'იმეილის ველის შევსება სავალდებულოა',
           minLength: {
             value: 3,
