@@ -1,7 +1,7 @@
-import DateInput from '@/componenets/Form/DateInput';
-import LeftArrow from '@/componenets/buttonIcons/LeftArrow';
-import RightArrow from '@/componenets/buttonIcons/RightArrow';
-import RadioInput from '@/componenets/Form/RadioInput';
+import { DateInput } from '@/componenets/Form';
+import { LeftArrow } from '@/componenets/Icons';
+import { RightArrow } from '@/componenets/Icons';
+import { RadioInput } from '@/componenets/Form';
 
 const CovidQuestionaireForm = () => {
   return (

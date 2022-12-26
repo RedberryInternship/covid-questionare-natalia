@@ -1,12 +1,12 @@
 import React from 'react';
 import { Fragment } from 'react';
-import headerLogo from '@/assets/images/header-logo.svg';
+import HeaderLogo from '@/componenets/Icons/HeaderLogo';
 const Layout = (props) => {
   return (
     <Fragment>
       <header className='w-[95rem] mt-20 m-auto '>
         <div className='flex justify-between content-center '>
-          <img src={headerLogo} alt='header logo' />
+          <HeaderLogo />
           <img src={props.pageNumber} alt='page 1' />
         </div>
         <hr className=' mt-6 bg-black-700 border-none bg-black h-[0.1rem]' />

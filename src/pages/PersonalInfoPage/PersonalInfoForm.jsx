@@ -1,12 +1,11 @@
-import RightArrow from '@/componenets/buttonIcons/RightArrow';
+import { RightArrow } from '@/componenets/Icons';
 import { useForm } from 'react-hook-form';
-import TextInput from '@/componenets/Form/TextInput';
+import { TextInput } from '@/componenets/Form';
 
 const PersonalInfoForm = (props) => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm({
     defaultValues: {
@@ -17,7 +16,6 @@ const PersonalInfoForm = (props) => {
   });
 
   console.log(errors);
-  console.log(watch());
   return (
     <form
       onSubmit={handleSubmit((data) => {

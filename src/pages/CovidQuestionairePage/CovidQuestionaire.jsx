@@ -1,10 +1,10 @@
 import Layout from '@/componenets/Layout/Layout';
-import page2 from '@/assets/images/page2.png';
+import questionsPageNum from '@/assets/images/questionsPageNum.png';
 import CovidQuestionaireForm from './CovidQuestionaireForm';
 import QuestionaireImage from '@/assets/images/QuestionaireImage.png';
 const CovidQuestionaire = () => {
   return (
-    <Layout pageNumber={page2}>
+    <Layout pageNumber={questionsPageNum}>
       <CovidQuestionaireForm />
       <img
         src={QuestionaireImage}

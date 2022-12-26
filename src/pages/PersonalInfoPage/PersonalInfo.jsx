@@ -1,11 +1,11 @@
-import Layout from '@/componenets/Layout/Layout';
+import { Layout } from '@/componenets/Layout';
 import PersonalInfoForm from './PersonalInfoForm';
-import page1 from '@/assets/images/page-1.svg';
+import identificationPageNum from '@/assets/images/identificationPageNum.png';
 import identificationImage from '@/assets/images/identificationImage.png';
 
 const PersonalInfo = () => {
   return (
-    <Layout pageNumber={page1}>
+    <Layout pageNumber={identificationPageNum}>
       <div>
         <PersonalInfoForm />
         <div>
