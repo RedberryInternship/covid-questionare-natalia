@@ -1,6 +1,6 @@
-import RightArrow from '../../componenets/buttonIcons/RightArrow';
+import RightArrow from '@/componenets/buttonIcons/RightArrow';
 import { useForm } from 'react-hook-form';
-import TextInput from '../../componenets/Form/TextInput';
+import TextInput from '@/componenets/Form/TextInput';
 
 const PersonalInfoForm = (props) => {
   const {

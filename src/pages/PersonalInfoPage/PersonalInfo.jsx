@@ -1,7 +1,7 @@
-import Layout from '../../componenets/Layout/Layout';
+import Layout from '@/componenets/Layout/Layout';
 import PersonalInfoForm from './PersonalInfoForm';
-import page1 from '../../assets/images/page-1.svg';
-import identificationImage from '../../assets/images/identificationImage.png';
+import page1 from '@/assets/images/page-1.svg';
+import identificationImage from '@/assets/images/identificationImage.png';
 
 const PersonalInfo = () => {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from '../../assets/images/logo.png';
-import '../../index.css';
+import logo from '@/assets/images/logo.png';
+import '@/index.css';
 import { Link } from 'react-router-dom';
 const StartQuestions = () => {
   return (

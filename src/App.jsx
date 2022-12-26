@@ -1,7 +1,7 @@
 import './App.css';
-import StartQuestions from './pages/StartQuestionsPage/StartQuestions';
-import PersonalInfo from './pages/PersonalInfoPage/PersonalInfo';
-import CovidQuestionaire from './pages/CovidQuestionairePage/CovidQuestionaire';
+import StartQuestions from '@/pages/StartQuestionsPage/StartQuestions';
+import PersonalInfo from '@/pages/PersonalInfoPage/PersonalInfo';
+import CovidQuestionaire from '@/pages/CovidQuestionairePage/CovidQuestionaire';
 import { Route } from 'react-router-dom';
 function App() {
   return (
