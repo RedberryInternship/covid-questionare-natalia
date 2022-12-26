@@ -1,6 +1,6 @@
 import React from 'react';
 import { Fragment } from 'react';
-import HeaderLogo from '@/componenets/Icons/HeaderLogo';
+import { HeaderLogo } from '@/componenets/Icons';
 const Layout = (props) => {
   return (
     <Fragment>

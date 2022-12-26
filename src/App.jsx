@@ -1,7 +1,5 @@
 import './App.css';
-import { StartQuestions } from '@/pages/StartQuestionsPage';
-import { PersonalInfo } from '@/pages/PersonalInfoPage';
-import { CovidQuestionaire } from '@/pages/CovidQuestionairePage';
+import { StartQuestions, PersonalInfo, CovidQuestionaire } from '@/pages';
 import { Route } from 'react-router-dom';
 function App() {
   return (
