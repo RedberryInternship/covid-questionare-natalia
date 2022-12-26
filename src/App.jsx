@@ -1,5 +1,10 @@
 import './App.css';
-import { StartQuestions, PersonalInfo, CovidQuestionaire } from '@/pages';
+import {
+  StartQuestions,
+  PersonalInfo,
+  CovidQuestionaire,
+  Vaccination,
+} from '@/pages';
 import { Route } from 'react-router-dom';
 function App() {
   return (
@@ -12,6 +17,9 @@ function App() {
       </Route>
       <Route path='/covid-questionaire'>
         <CovidQuestionaire />
+      </Route>
+      <Route path='/vaccination'>
+        <Vaccination />
       </Route>
     </div>
   );
