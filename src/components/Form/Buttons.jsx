@@ -1,4 +1,4 @@
-import { LeftArrow, RightArrow } from '@/componenets';
+import { LeftArrow, RightArrow } from '@/components';
 const Buttons = () => {
   return (
     <>

@@ -1,4 +1,4 @@
-import { Buttons, DateInput, RadioInput } from '@/componenets';
+import { Buttons, DateInput, RadioInput } from '@/components';
 const CovidQuestionaireForm = () => {
   return (
     <form>

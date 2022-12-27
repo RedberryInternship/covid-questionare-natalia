@@ -1,8 +1,4 @@
-import {
-  RadioInput,
-  Buttons,
-  BookVaccinationNotification,
-} from '@/componenets';
+import { RadioInput, Buttons, BookVaccinationNotification } from '@/components';
 import { useForm, useWatch } from 'react-hook-form';
 
 const VaccinationForm = () => {

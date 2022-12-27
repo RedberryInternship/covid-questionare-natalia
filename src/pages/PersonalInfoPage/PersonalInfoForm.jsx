@@ -1,4 +1,4 @@
-import { RightArrow, TextInput } from '@/componenets';
+import { RightArrow, TextInput } from '@/components';
 import { useForm } from 'react-hook-form';
 
 const PersonalInfoForm = (props) => {
@@ -61,7 +61,7 @@ const PersonalInfoForm = (props) => {
             value: 3,
             message: 'იმეილის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
           },
-          pattern: '/^[a-zA-Z0-9_.+-]+@redberry.ge/',
+          pattern: /^[a-zA-Z0-9_.+-]+@redberry.ge/,
         })}
       />
       <p>{errors.email?.message}</p>

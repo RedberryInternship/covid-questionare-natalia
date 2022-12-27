@@ -1,4 +1,4 @@
-import { Layout } from '@/componenets/Layout';
+import { Layout } from '@/components/Layout';
 import PersonalInfoForm from './PersonalInfoForm';
 import identificationPageNum from '@/assets/images/identificationPageNum.png';
 import identificationImage from '@/assets/images/identificationImage.png';
@@ -20,7 +20,7 @@ const PersonalInfo = () => {
         <img
           src={identificationImage}
           alt='Identification'
-          className='-mt-14'
+          className=' -mt-10'
         />
       </div>
     </Layout>

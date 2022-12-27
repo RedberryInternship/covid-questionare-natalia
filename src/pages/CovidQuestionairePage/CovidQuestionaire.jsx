@@ -1,4 +1,4 @@
-import { Layout } from '@/componenets';
+import { Layout } from '@/components';
 import questionsPageNum from '@/assets/images/questionsPageNum.png';
 import CovidQuestionaireForm from './CovidQuestionaireForm';
 import QuestionaireImage from '@/assets/images/QuestionaireImage.png';
