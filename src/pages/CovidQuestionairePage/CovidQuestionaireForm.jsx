@@ -1,5 +1,4 @@
-import { LeftArrow, RightArrow, DateInput, RadioInput } from '@/componenets';
-
+import { Buttons, DateInput, RadioInput } from '@/components';
 const CovidQuestionaireForm = () => {
   return (
     <form>
@@ -21,12 +20,7 @@ const CovidQuestionaireForm = () => {
         placeholder='რიცხვი'
         name='covidDate'
       />
-      <button type='submit' className='absolute left-[45%] bottom-16'>
-        <LeftArrow />
-      </button>
-      <button type='submit' className='absolute left-[52%] bottom-16'>
-        <RightArrow />
-      </button>
+      <Buttons />
     </form>
   );
 };

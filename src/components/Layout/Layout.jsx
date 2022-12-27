@@ -1,11 +1,10 @@
-import React from 'react';
 import { Fragment } from 'react';
-import { HeaderLogo } from '@/componenets/Icons';
+import { HeaderLogo } from '@/components/Icons';
 const Layout = (props) => {
   return (
     <Fragment>
-      <header className='w-[95rem] mt-20 m-auto '>
-        <div className='flex justify-between content-center '>
+      <header className=' sticky w-[95rem] h-34 top-0 m-auto bg-brown-450 '>
+        <div className='flex justify-between content-center pt-20 '>
           <HeaderLogo />
           <img src={props.pageNumber} alt='page 1' />
         </div>
