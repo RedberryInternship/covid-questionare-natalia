@@ -1,5 +1,6 @@
 import { RadioInput, Buttons, BookVaccinationNotification } from '@/components';
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
+import useCheckVaccinationInput from './useCheckVaccinationInputs';
 
 const VaccinationForm = () => {
   const {
@@ -10,14 +11,15 @@ const VaccinationForm = () => {
   } = useForm({
     defaultValues: {
       vaccinated: '',
+      dose: '',
+      planVaccination: '',
     },
   });
-  const checkRadio = useWatch({
-    control,
-    name: ['vaccinated', 'dose', 'planVaccination'],
-  });
+
+  const checkRadio = useCheckVaccinationInput(control);
 
   console.log(errors);
+  console.log(checkRadio);
   return (
     <form
       onSubmit={handleSubmit((data) => {
@@ -58,7 +60,7 @@ const VaccinationForm = () => {
         <div>
           <h1 className='text-[22px] font-bold mt-10'>რას ელოდები?*</h1>
           <RadioInput
-            register={register('dose', { required: true })}
+            register={register('planVaccination', { required: true })}
             name='planVaccination'
             radioContent='დარეგისტრირებული ვარ და ველოდები რიცხვს'
           />

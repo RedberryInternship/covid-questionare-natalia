@@ -1,5 +1,5 @@
 import { Layout } from '@/components';
-import AdvicePageNum from '@/assets/images/AdvicePageNum.png';
+import AdvicePageNum from '@/assets/images/advice-page-num.png';
 import AdviceForm from './AdviceForm';
 import bike from '@/assets/images/bike.png';
 const Advice = () => {

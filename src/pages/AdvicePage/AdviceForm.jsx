@@ -1,10 +1,11 @@
-import { useForm, useWatch } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import {
   RadioInput,
   TextAreaInput,
   FinishButton,
   LeftArrow,
 } from '@/components';
+import useCheckInput from './useCheckAdviceInput';
 const AdviceForm = () => {
   const {
     register,
@@ -19,11 +20,8 @@ const AdviceForm = () => {
       advice: '',
     },
   });
-  const checkInputs = useWatch({
-    control,
-    name: ['meetings', 'officeWork', 'offlineMeetings', 'advice'],
-  });
-  console.log(checkInputs);
+
+  console.log(useCheckInput(control));
   console.log(errors);
   return (
     <form
