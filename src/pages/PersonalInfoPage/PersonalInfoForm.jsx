@@ -1,20 +1,25 @@
 import { RightArrow, TextInput } from '@/components';
 import { useForm } from 'react-hook-form';
+import useCheckPersonalInfoInput from './useCheckPersonalInfoInput';
 
 const PersonalInfoForm = (props) => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm({
     defaultValues: {
-      firstName: '',
-      lastName: '',
+      first_name: '',
+      last_name: '',
       email: '',
     },
   });
 
+  const checkInputs = useCheckPersonalInfoInput(control);
+
   console.log(errors);
+  console.log(checkInputs);
   return (
     <form
       onSubmit={handleSubmit((data) => {
@@ -22,11 +27,11 @@ const PersonalInfoForm = (props) => {
       })}
     >
       <TextInput
-        id='firstName'
+        id='first_name'
         label='სახელი*'
-        name='firstname'
+        name='first_name'
         placeholder='იოსებ'
-        register={register('firstName', {
+        register={register('first_name', {
           required: 'სახელის ველის შევსება სავალდებულოა',
           minLength: {
             value: 3,
@@ -34,13 +39,13 @@ const PersonalInfoForm = (props) => {
           },
         })}
       />
-      <p>{errors.firstName?.message}</p>
+      <p>{errors.first_name?.message}</p>
       <TextInput
-        id='lastName'
+        id='last_name'
         label='გვარი*'
-        name='lastName'
+        name='last_name'
         placeholder='ჯუღაშვილი'
-        register={register('lastName', {
+        register={register('last_name', {
           required: 'გვარის ველის შევსება სავალდებულოა',
           minLength: {
             value: 3,
@@ -48,7 +53,7 @@ const PersonalInfoForm = (props) => {
           },
         })}
       />
-      <p>{errors.lastName?.message}</p>
+      <p>{errors.last_name?.message}</p>
 
       <TextInput
         id='email'
