@@ -3,7 +3,7 @@ import Star from '../../assets/images/star.png';
 import './ThankYou.css';
 const ThankYou = () => {
   return (
-    <div className='h-screen bg-dark-gray flex flex-col justify-center items-center div '>
+    <div className='h-screen bg-dark-gray flex flex-col justify-center items-center '>
       <img
         src={Star}
         alt='Big star'

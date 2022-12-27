@@ -12,7 +12,10 @@ module.exports = {
         'finish-button': '#208298',
       },
       textShadow: {
-        '2xl': '1px 1px 0 #EAEAEA, 2px 0px 0 #000',
+        '2xl': '2px 1px 0 #EAEAEA, 3px 1px 0 #000',
+      },
+      fontFamily: {
+        arial: ['Arial-caps'],
       },
     },
   },

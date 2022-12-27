@@ -1,0 +1,33 @@
+.logo-animation {
+    animation: logo 1.4s forwards;
+}
+
+.text-down-animation {
+    animation: questions 1s forwards ease-out;
+    animation-delay: 1.5s;
+}
+@keyframes logo {
+    from{
+        overflow-y: hidden;
+        transform: scale(25);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
+
+@keyframes questions {
+    from {
+        top: -400px;
+        opacity: 1
+    }
+
+    to {
+        top: 0;
+        opacity: 1;
+        visibility: visible;
+
+    }
+
+}
