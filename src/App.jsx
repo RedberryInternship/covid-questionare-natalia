@@ -5,6 +5,7 @@ import {
   CovidQuestionaire,
   Vaccination,
   Advice,
+  ThankYou,
 } from '@/pages';
 import { Route } from 'react-router-dom';
 function App() {
@@ -24,6 +25,9 @@ function App() {
       </Route>
       <Route path='/advice'>
         <Advice />
+      </Route>
+      <Route path='/thank-you'>
+        <ThankYou />
       </Route>
     </div>
   );
