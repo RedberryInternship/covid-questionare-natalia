@@ -1,6 +1,7 @@
 import { RightArrow, TextInput } from '@/components';
 import { useForm } from 'react-hook-form';
 import useCheckPersonalInfoInput from './useCheckPersonalInfoInput';
+import { ErrorMessage } from '.';
 
 const PersonalInfoForm = (props) => {
   const {
@@ -14,6 +15,7 @@ const PersonalInfoForm = (props) => {
       last_name: '',
       email: '',
     },
+    mode: 'all',
   });
 
   const checkInputs = useCheckPersonalInfoInput(control);
@@ -39,7 +41,7 @@ const PersonalInfoForm = (props) => {
           },
         })}
       />
-      <p>{errors.first_name?.message}</p>
+      <ErrorMessage errorMessage={errors.first_name?.message} />
       <TextInput
         id='last_name'
         label='გვარი*'
@@ -53,23 +55,26 @@ const PersonalInfoForm = (props) => {
           },
         })}
       />
-      <p>{errors.last_name?.message}</p>
+      <ErrorMessage errorMessage={errors.last_name?.message} />
 
       <TextInput
         id='email'
         label='მეილი*'
         name='email'
-        placeholder='იოსებ'
+        placeholder='fbi@redberry.ge'
         register={register('email', {
           required: 'იმეილის ველის შევსება სავალდებულოა',
           minLength: {
             value: 3,
             message: 'იმეილის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
           },
-          pattern: /^[a-zA-Z0-9_.+-]+@redberry.ge/,
+          pattern: {
+            value: /^[a-zA-Z0-9_.+-]+@redberry.ge/,
+            message: 'იმეილი უნდა მთავრდებოდეს redberry.ge-ით',
+          },
         })}
       />
-      <p>{errors.email?.message}</p>
+      <ErrorMessage errorMessage={errors.email?.message} />
 
       <button type='submit' className='absolute left-[52%] bottom-16'>
         <RightArrow />

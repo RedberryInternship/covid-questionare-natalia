@@ -10,6 +10,7 @@ module.exports = {
         },
         'dark-gray': '#232323',
         'finish-button': '#208298',
+        'error-red': '#F15524',
       },
       textShadow: {
         '2xl': '2px 1px 0 #EAEAEA, 3px 1px 0 #000',
