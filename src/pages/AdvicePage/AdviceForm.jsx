@@ -14,10 +14,10 @@ const AdviceForm = () => {
     formState: { errors },
   } = useForm({
     defaultValues: {
-      meetings: '',
-      officeWork: '',
-      offlineMeetings: '',
-      advice: '',
+      non_formal_meetings: '',
+      number_of_days_from_office: '',
+      what_about_meetings_in_live: '',
+      tell_us_your_opinion_about_us: '',
     },
   });
 
@@ -41,67 +41,67 @@ const AdviceForm = () => {
         სადაც ყველა სურვილისამებრ ჩაერთვება?*
       </h1>
       <RadioInput
-        register={register('meetings', { required: true })}
-        name='meetings'
+        register={register('non_formal_meetings', { required: true })}
+        name='non_formal_meetings'
         radioContent='კვირაში ორჯერ'
       />
       <RadioInput
-        register={register('meetings', { required: true })}
-        name='meetings'
+        register={register('non_formal_meetings', { required: true })}
+        name='non_formal_meetings'
         radioContent='კვირაში ერთხელ'
       />
       <RadioInput
-        register={register('meetings', { required: true })}
-        name='meetings'
+        register={register('non_formal_meetings', { required: true })}
+        name='non_formal_meetings'
         radioContent='ორ კვირაში ერთხელ'
       />
       <RadioInput
-        register={register('meetings', { required: true })}
-        name='meetings'
+        register={register('non_formal_meetings', { required: true })}
+        name='non_formal_meetings'
         radioContent='თვეში ერთხელ'
       />
       <h1 className='w-[36rem] text-[22px] font-bold mt-10 text-dark-gray'>
         კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
       </h1>
       <RadioInput
-        register={register('officeWork', { required: true })}
-        name='officeWork'
+        register={register('number_of_days_from_office', { required: true })}
+        name='number_of_days_from_office'
         radioContent='1'
       />
       <RadioInput
-        register={register('officeWork', { required: true })}
-        name='officeWork'
+        register={register('number_of_days_from_office', { required: true })}
+        name='number_of_days_from_office'
         radioContent='2'
       />
       <RadioInput
-        register={register('officeWork', { required: true })}
-        name='officeWork'
+        register={register('number_of_days_from_office', { required: true })}
+        name='number_of_days_from_office'
         radioContent='3'
       />
       <RadioInput
-        register={register('officeWork', { required: true })}
-        name='officeWork'
+        register={register('number_of_days_from_office', { required: true })}
+        name='number_of_days_from_office'
         radioContent='4'
       />
       <RadioInput
-        register={register('officeWork', { required: true })}
-        name='officeWork'
+        register={register('number_of_days_from_office', { required: true })}
+        name='number_of_days_from_office'
         radioContent='5'
       />
       <TextAreaInput
-        register={register('offlineMeetings')}
+        register={register('what_about_meetings_in_live')}
         label='რას ფიქრობ ფიზიკურ შეკრებებზე?'
-        name='offlineMeetings'
+        name='what_about_meetings_in_live'
       />
       <TextAreaInput
-        register={register('advice')}
+        register={register('tell_us_your_opinion_about_us')}
         label={
           <h1>
             რას ფიქრობ არსებულ გარემოზე: <br /> რა მოგწონს, რას დაამატებდი, რას
             შეცვლიდი?
           </h1>
         }
-        name='advice'
+        name='tell_us_your_opinion_about_us'
       />
       <FinishButton />
       <button type='submit' className=' ml-[100%] mt-52 mb-20'>

@@ -1,0 +1,47 @@
+.visibility-animation {
+    animation: visibilityAnimation 0.5s forwards;
+    animation-delay: 1s;
+}
+.tiny-star-anim{
+    animation: tinyStarAnim 0.2s forwards;
+    animation-delay: 1.5s;
+}
+
+.big-star-anim {
+    animation: bigStarAnim 0.2s forwards;
+    animation-delay: 1.5s;
+}
+
+@keyframes tinyStarAnim {
+    0%{
+
+    }
+    100% {
+        margin-left: 320px;
+        margin-top: 130px;
+        visibility: visible;
+    }
+}
+
+@keyframes bigStarAnim {
+    0%{
+        
+    }
+    100% {
+        margin-right: 300px;
+        margin-bottom: 150px;
+        visibility: visible;
+    }
+}
+
+
+@keyframes visibilityAnimation {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        visibility: visible;
+        opacity: 1;
+    }
+}

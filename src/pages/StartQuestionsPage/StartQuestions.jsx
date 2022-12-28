@@ -1,17 +1,23 @@
 import React from 'react';
 import logo from '@/assets/images/logo.png';
-import '@/index.css';
+import './StartQuestions.css';
 import { Link } from 'react-router-dom';
 const StartQuestions = () => {
   return (
-    <div className='flex flex-col justify-center items-center text-center h-screen -mt-20'>
-      <img className=' w-[6.25rem] logo-animation' src={logo} alt='logo' />
-      <Link
-        to='/info'
-        className=' text-3xl font-bold mt-24 cursor-pointer hover:text-shadow-2xl questions-animation '
-      >
-        კითხვარის <br /> დაწყება
-      </Link>
+    <div className='flex flex-col justify-center items-center text-center h-screen -mt-24'>
+      <img
+        className=' w-[6.3rem] logo-animation absolute'
+        src={logo}
+        alt='logo'
+      />
+      <div className=' overflow-y-hidden relative w-96 h-20 top-40 -left-[5.3rem] text-center'>
+        <Link
+          to='/info'
+          className='text-3xl font-bold cursor-pointer hover:text-shadow-2xl text-down-animation invisible absolute text-dark-gray font-arial'
+        >
+          კითხვარის <br /> დაწყება
+        </Link>
+      </div>
     </div>
   );
 };

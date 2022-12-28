@@ -2,7 +2,12 @@ import { useWatch } from 'react-hook-form';
 const useCheckAdviceInput = (control) => {
   const checkInputs = useWatch({
     control,
-    name: ['meetings', 'officeWork', 'offlineMeetings', 'advice'],
+    name: [
+      'non_formal_meetings',
+      'number_of_days_from_office',
+      'what_about_meetings_in_live',
+      'tell_us_your_opinion_about_us',
+    ],
   });
   return checkInputs;
 };
