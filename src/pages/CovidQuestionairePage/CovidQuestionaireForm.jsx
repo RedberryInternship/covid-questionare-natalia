@@ -1,75 +1,103 @@
 import { useForm } from 'react-hook-form';
 import { Buttons, DateInput, RadioInput, TextInput } from '@/components';
 import useCheckQuestionaireInput from './useCheckQuestionaireInput';
+import { useContext } from 'react';
+import { FormContext } from '../../context/FormProvider';
+import { useHistory } from 'react-router-dom';
+import { ErrorMessage } from '@/components';
 const CovidQuestionaireForm = () => {
+  const { updateFields, printData } = useContext(FormContext);
+
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
     defaultValues: {
       had_covid: '',
       had_antibody_test: '',
-      'antibodies.test_date': '',
-      'antibodies.number': '',
-      covid_date: '',
+      antibodies: {
+        test_date: '',
+        number: '',
+      },
+      covid_sickness_date: '',
     },
   });
 
   const checkRadio = useCheckQuestionaireInput(control);
+  const history = useHistory();
 
-  console.log(errors);
-  console.log(checkRadio);
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log(data);
+        if (isValid) {
+          printData();
+          updateFields(data);
+          history.push('/vaccination');
+        }
       })}
     >
       <h1 className='text-[22px] font-bold mt-10'>
         გაქვს გადატანილი Covid-19?*
       </h1>
       <RadioInput
-        register={register('had_covid', { required: true })}
+        register={register('had_covid', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         id='covidYes'
         name='had_covid'
         radioContent='კი'
+        value='yes'
       />
       <RadioInput
-        register={register('had_covid', { required: true })}
+        register={register('had_covid', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         id='covidNo'
         name='had_covid'
         radioContent='არა'
+        value='no'
       />
       <RadioInput
-        register={register('had_covid', { required: true })}
+        register={register('had_covid', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         id='now'
         name='had_covid'
         radioContent='ახლა მაქვს'
+        value='have_right_now'
       />
+      <ErrorMessage errorMessage={errors.had_covid?.message} />
 
-      {checkRadio[0] === 'კი' ? (
+      {checkRadio[0] === 'yes' ? (
         <>
           <h1 className='text-[22px] font-bold mt-10'>
             ანტისხეულების ტესტი გაქვს გაკეთებული?*
           </h1>
           <RadioInput
-            register={register('had_antibody_test', { required: true })}
+            register={register('had_antibody_test', {
+              required: 'ველის შევსება სავალდებულოა',
+            })}
             id='yes'
             name='had_antibody_test'
             radioContent='კი'
+            value='true'
           />
           <RadioInput
-            register={register('had_antibody_test', { required: true })}
+            register={register('had_antibody_test', {
+              required: 'ველის შევსება სავალდებულოა',
+            })}
             id='no'
             name='had_antibody_test'
             radioContent='არა'
+            value='false'
           />
+          <ErrorMessage errorMessage={errors.had_antibody_test?.message} />
         </>
       ) : null}
 
-      {checkRadio[0] === 'კი' && checkRadio[1] === 'კი' ? (
+      {checkRadio[0] === 'yes' && checkRadio[1] === 'true' ? (
         <>
           <DateInput
             register={register('antibodies.test_date')}
@@ -85,15 +113,20 @@ const CovidQuestionaireForm = () => {
             />
           </div>
         </>
-      ) : checkRadio[0] === 'კი' && checkRadio[1] === 'არა' ? (
-        <DateInput
-          register={register('covid_date', { required: true })}
-          label='მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*'
-          placeholder='დდ/თთ/წწ'
-          name='covid_date'
-        />
+      ) : checkRadio[0] === 'yes' && checkRadio[1] === 'false' ? (
+        <>
+          <DateInput
+            register={register('covid_sickness_date', {
+              required: 'ველის შევსება სავალდებულოა',
+            })}
+            label='მიუთითე მიახლოებითი პერიოდი (დღე/თვე/წელი) როდის გქონდა Covid-19*'
+            placeholder='დდ/თთ/წწ'
+            name='covid_sickness_date'
+          />
+          <ErrorMessage errorMessage={errors.covid_sickness_date?.message} />
+        </>
       ) : null}
-      <Buttons />
+      <Buttons link='/info' />
     </form>
   );
 };
