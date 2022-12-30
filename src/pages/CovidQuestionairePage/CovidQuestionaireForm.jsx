@@ -2,11 +2,12 @@ import { useForm } from 'react-hook-form';
 import { Buttons, DateInput, RadioInput, TextInput } from '@/components';
 import useCheckQuestionaireInput from './useCheckQuestionaireInput';
 import { useContext } from 'react';
-import { FormContext } from '../../context/FormProvider';
+import { FormContext } from '@/context/FormProvider';
 import { useHistory } from 'react-router-dom';
 import { ErrorMessage } from '@/components';
 const CovidQuestionaireForm = () => {
-  const { updateFields, printData } = useContext(FormContext);
+  const { updateFields, formData } = useContext(FormContext);
+  const getItems = JSON.parse(localStorage.getItem('covidQuestionaire'));
 
   const {
     register,
@@ -14,15 +15,7 @@ const CovidQuestionaireForm = () => {
     control,
     formState: { errors, isValid },
   } = useForm({
-    defaultValues: {
-      had_covid: '',
-      had_antibody_test: '',
-      antibodies: {
-        test_date: '',
-        number: '',
-      },
-      covid_sickness_date: '',
-    },
+    defaultValues: getItems,
   });
 
   const checkRadio = useCheckQuestionaireInput(control);
@@ -32,8 +25,8 @@ const CovidQuestionaireForm = () => {
     <form
       onSubmit={handleSubmit((data) => {
         if (isValid) {
-          printData();
           updateFields(data);
+          console.log(formData);
           history.push('/vaccination');
         }
       })}

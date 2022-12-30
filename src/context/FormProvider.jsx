@@ -1,21 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 export const FormContext = React.createContext();
 
 function FormProviderComponent({ children }) {
-  let formData = {};
+  const [formData, setFormData] = useState();
 
-  const printData = function () {
-    console.log('Form Data', formData);
+  const updateFields = (data) => {
+    setFormData({ ...formData, ...data });
   };
 
-  function updateFields(data) {
-    formData = { ...formData, ...data };
-    console.log(formData);
-  }
-
+  const sendForm = () => {
+    fetch('https://covid19.devtest.ge/api/create', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        accept: 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
   return (
-    <FormContext.Provider value={{ printData, updateFields }}>
+    <FormContext.Provider value={{ updateFields, sendForm, formData }}>
       {children}
     </FormContext.Provider>
   );

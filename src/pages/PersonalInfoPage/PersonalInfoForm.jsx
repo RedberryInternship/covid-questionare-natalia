@@ -1,23 +1,21 @@
 import { RightArrow, TextInput } from '@/components';
 import useCheckPersonalInfoInput from './useCheckPersonalInfoInput';
 import { useHistory } from 'react-router-dom';
-import { FormContext } from '../../context/FormProvider';
+import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '.';
 const PersonalInfoForm = (props) => {
-  const { updateFields, printData } = useContext(FormContext);
+  const { updateFields } = useContext(FormContext);
+  const getItems = JSON.parse(localStorage.getItem('personalInfo'));
+
   const {
     register,
     handleSubmit,
     control,
     formState: { errors, isValid },
   } = useForm({
-    defaultValues: {
-      first_name: '',
-      last_name: '',
-      email: '',
-    },
+    defaultValues: getItems,
     mode: 'all',
   });
 
@@ -26,10 +24,9 @@ const PersonalInfoForm = (props) => {
 
   return (
     <form
-      onSubmit={handleSubmit((e) => {
+      onSubmit={handleSubmit((data) => {
         if (isValid) {
-          updateFields(e);
-          printData();
+          updateFields(data);
           history.push('/covid-questionaire');
         }
       })}
@@ -42,7 +39,7 @@ const PersonalInfoForm = (props) => {
         register={register('first_name', {
           required: 'სახელის ველის შევსება სავალდებულოა',
           minLength: {
-            value: 2,
+            value: 3,
             message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
           },
         })}
@@ -56,7 +53,7 @@ const PersonalInfoForm = (props) => {
         register={register('last_name', {
           required: 'გვარის ველის შევსება სავალდებულოა',
           minLength: {
-            value: 2,
+            value: 3,
             message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
           },
         })}

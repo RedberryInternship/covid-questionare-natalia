@@ -7,25 +7,20 @@ import {
 } from '@/components';
 import useCheckInput from './useCheckAdviceInput';
 import { Link, useHistory } from 'react-router-dom';
-import { FormContext } from '../../context/FormProvider';
+import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
 
 const AdviceForm = () => {
-  const { updateFields, printData } = useContext(FormContext);
-
+  const { updateFields, formData, sendForm } = useContext(FormContext);
+  const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
     register,
     handleSubmit,
     control,
     formState: { errors, isValid },
   } = useForm({
-    defaultValues: {
-      non_formal_meetings: '',
-      number_of_days_from_office: '',
-      what_about_meetings_in_live: '',
-      tell_us_your_opinion_about_us: '',
-    },
+    defaultValues: getItems,
   });
   useCheckInput(control);
   const history = useHistory();
@@ -33,11 +28,17 @@ const AdviceForm = () => {
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log(errors);
-
         if (isValid) {
-          printData();
           updateFields(data);
+          console.log(formData);
+          sendForm();
+          localStorage.clear(
+            'advice',
+            'vaccination',
+            'personalInfo',
+            'covidQuestionaire'
+          );
+
           history.push('/thank-you');
         }
       })}

@@ -4,6 +4,15 @@ const useCheckPersonalInfoInput = (control) => {
     control,
     name: ['first_name', 'last_name', 'email'],
   });
+
+  localStorage.setItem(
+    'personalInfo',
+    JSON.stringify({
+      first_name: checkInputs[0],
+      last_name: checkInputs[1],
+      email: checkInputs[2],
+    })
+  );
   return checkInputs;
 };
 
