@@ -6,27 +6,41 @@ import {
   LeftArrow,
 } from '@/components';
 import useCheckInput from './useCheckAdviceInput';
+import { Link, useHistory } from 'react-router-dom';
+import { FormContext } from '@/context/FormProvider';
+import { useContext } from 'react';
+import { ErrorMessage } from '@/components';
+
 const AdviceForm = () => {
+  const { updateFields, formData, sendForm } = useContext(FormContext);
+  const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
     register,
     handleSubmit,
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm({
-    defaultValues: {
-      non_formal_meetings: '',
-      number_of_days_from_office: '',
-      what_about_meetings_in_live: '',
-      tell_us_your_opinion_about_us: '',
-    },
+    defaultValues: getItems,
   });
+  useCheckInput(control);
+  const history = useHistory();
 
-  console.log(useCheckInput(control));
-  console.log(errors);
   return (
     <form
       onSubmit={handleSubmit((data) => {
-        console.log(data);
+        if (isValid) {
+          updateFields(data);
+          console.log(formData);
+          sendForm();
+          localStorage.clear(
+            'advice',
+            'vaccination',
+            'personalInfo',
+            'covidQuestionaire'
+          );
+
+          history.push('/thank-you');
+        }
       })}
     >
       <p className='w-[36rem] text-xl leading-7 mt-10 text-dark-gray'>
@@ -41,53 +55,84 @@ const AdviceForm = () => {
         სადაც ყველა სურვილისამებრ ჩაერთვება?*
       </h1>
       <RadioInput
-        register={register('non_formal_meetings', { required: true })}
+        register={register('non_formal_meetings', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='non_formal_meetings'
         radioContent='კვირაში ორჯერ'
+        value='twice_a_week'
       />
       <RadioInput
-        register={register('non_formal_meetings', { required: true })}
+        register={register('non_formal_meetings', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='non_formal_meetings'
         radioContent='კვირაში ერთხელ'
+        value='once_a_week'
       />
       <RadioInput
-        register={register('non_formal_meetings', { required: true })}
+        register={register('non_formal_meetings', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='non_formal_meetings'
         radioContent='ორ კვირაში ერთხელ'
+        value='once_in_a_two_weeks'
       />
       <RadioInput
-        register={register('non_formal_meetings', { required: true })}
+        register={register('non_formal_meetings', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='non_formal_meetings'
         radioContent='თვეში ერთხელ'
+        value='once_in_a_month'
       />
+      <ErrorMessage errorMessage={errors.non_formal_meetings?.message} />
+
       <h1 className='w-[36rem] text-[22px] font-bold mt-10 text-dark-gray'>
         კვირაში რამდენი დღე ისურვებდი ოფისიდან მუშაობას?*
       </h1>
       <RadioInput
-        register={register('number_of_days_from_office', { required: true })}
+        register={register('number_of_days_from_office', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='number_of_days_from_office'
         radioContent='1'
+        value='1'
       />
       <RadioInput
-        register={register('number_of_days_from_office', { required: true })}
+        register={register('number_of_days_from_office', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='number_of_days_from_office'
         radioContent='2'
+        value='2'
       />
       <RadioInput
-        register={register('number_of_days_from_office', { required: true })}
+        register={register('number_of_days_from_office', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='number_of_days_from_office'
         radioContent='3'
+        value='3'
       />
       <RadioInput
-        register={register('number_of_days_from_office', { required: true })}
+        register={register('number_of_days_from_office', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='number_of_days_from_office'
         radioContent='4'
+        value='4'
       />
       <RadioInput
-        register={register('number_of_days_from_office', { required: true })}
+        register={register('number_of_days_from_office', {
+          required: 'ველის შევსება სავალდებულოა',
+        })}
         name='number_of_days_from_office'
         radioContent='5'
+        value='5'
       />
+      <ErrorMessage errorMessage={errors.number_of_days_from_office?.message} />
+
       <TextAreaInput
         register={register('what_about_meetings_in_live')}
         label='რას ფიქრობ ფიზიკურ შეკრებებზე?'
@@ -104,9 +149,11 @@ const AdviceForm = () => {
         name='tell_us_your_opinion_about_us'
       />
       <FinishButton />
-      <button type='submit' className=' ml-[100%] mt-52 mb-20'>
-        <LeftArrow />
-      </button>
+      <Link to='/vaccination'>
+        <button className=' ml-[100%] mt-52 mb-20'>
+          <LeftArrow />
+        </button>
+      </Link>
     </form>
   );
 };

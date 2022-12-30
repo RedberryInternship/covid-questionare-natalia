@@ -1,10 +1,10 @@
 .logo-animation {
-    animation: logo 1.4s forwards;
+    animation: logo 0.8s forwards;
 }
 
 .text-down-animation {
     animation: questions 1s forwards ease-out;
-    animation-delay: 1.5s;
+    animation-delay: 0.3s;
 }
 @keyframes logo {
     from{
