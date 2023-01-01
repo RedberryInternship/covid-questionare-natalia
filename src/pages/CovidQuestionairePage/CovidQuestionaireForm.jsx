@@ -3,10 +3,11 @@ import { Buttons, DateInput, RadioInput, TextInput } from '@/components';
 import useCheckQuestionaireInput from './useCheckQuestionaireInput';
 import { useContext } from 'react';
 import { FormContext } from '@/context/FormProvider';
-import { useHistory } from 'react-router-dom';
 import { ErrorMessage } from '@/components';
+import { useNavigate } from 'react-router-dom';
 const CovidQuestionaireForm = () => {
   const { updateFields, formData } = useContext(FormContext);
+  const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('covidQuestionaire'));
 
   const {
@@ -19,7 +20,6 @@ const CovidQuestionaireForm = () => {
   });
 
   const checkRadio = useCheckQuestionaireInput(control);
-  const history = useHistory();
 
   return (
     <form
@@ -27,7 +27,7 @@ const CovidQuestionaireForm = () => {
         if (isValid) {
           updateFields(data);
           console.log(formData);
-          history.push('/vaccination');
+          navigate('/vaccination');
         }
       })}
     >

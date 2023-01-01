@@ -2,7 +2,8 @@ import { Layout } from '@/components/Layout';
 import PersonalInfoForm from './PersonalInfoForm';
 import identificationPageNum from '@/assets/images/identification-page-num.png';
 import identificationImage from '@/assets/images/identification-image.png';
-
+import Rectangle from '@/assets/images/rectangle.png';
+import { motion } from 'framer-motion';
 const PersonalInfo = () => {
   return (
     <Layout pageNumber={identificationPageNum}>
@@ -17,10 +18,18 @@ const PersonalInfo = () => {
         </div>
       </div>
       <div>
+        <motion.img
+          src={Rectangle}
+          alt='yellow rectangle'
+          className='absolute top-[20.5rem] right-80 '
+          initial={{ opacity: 0, width: 300, top: 400, right: 700 }}
+          animate={{ opacity: 0.7, width: 630, top: 328, right: 350 }}
+          transition={{ duration: 0.5 }}
+        />
         <img
           src={identificationImage}
           alt='Identification'
-          className=' -mt-10'
+          className=' -mt-10 '
         />
       </div>
     </Layout>

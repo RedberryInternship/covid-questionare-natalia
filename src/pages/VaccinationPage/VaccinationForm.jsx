@@ -3,11 +3,13 @@ import { useForm } from 'react-hook-form';
 import useCheckVaccinationInput from './useCheckVaccinationInputs';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { ErrorMessage } from '@/components';
+import { useNavigate } from 'react-router-dom';
 
 const VaccinationForm = () => {
   const { updateFields, formData } = useContext(FormContext);
+  const navigate = new useNavigate();
+
   const getItems = JSON.parse(localStorage.getItem('vaccination'));
 
   const {
@@ -20,7 +22,6 @@ const VaccinationForm = () => {
   });
 
   const checkRadio = useCheckVaccinationInput(control);
-  const history = useHistory();
 
   return (
     <form
@@ -28,7 +29,7 @@ const VaccinationForm = () => {
         if (isValid) {
           updateFields(data);
           console.log(formData);
-          history.push('/advice');
+          navigate('/advice');
         }
       })}
     >

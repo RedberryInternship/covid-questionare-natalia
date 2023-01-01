@@ -1,5 +1,5 @@
 import ThankYouImage from '../../assets/images/thank-you-image.png';
-import Star from '../../assets/images/star.png';
+import Star from '../../assets/images/tiny-star.png';
 import './ThankYou.css';
 const ThankYou = () => {
   return (

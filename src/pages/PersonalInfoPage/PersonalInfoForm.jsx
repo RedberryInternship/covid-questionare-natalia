@@ -1,12 +1,13 @@
 import { RightArrow, TextInput } from '@/components';
 import useCheckPersonalInfoInput from './useCheckPersonalInfoInput';
-import { useHistory } from 'react-router-dom';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '.';
+import { useNavigate } from 'react-router-dom';
 const PersonalInfoForm = (props) => {
-  const { updateFields } = useContext(FormContext);
+  const { updateFields, formData } = useContext(FormContext);
+  const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('personalInfo'));
 
   const {
@@ -20,14 +21,14 @@ const PersonalInfoForm = (props) => {
   });
 
   useCheckPersonalInfoInput(control);
-  const history = useHistory();
 
   return (
     <form
       onSubmit={handleSubmit((data) => {
         if (isValid) {
           updateFields(data);
-          history.push('/covid-questionaire');
+          console.log(formData);
+          navigate('/covid-questionaire');
         }
       })}
     >
