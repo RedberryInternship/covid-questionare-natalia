@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
 
 const AdviceForm = () => {
-  const { updateFields, formData, sendForm } = useContext(FormContext);
+  const { updateFields, formData, sendForm, onPrev } = useContext(FormContext);
   const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
@@ -149,7 +149,7 @@ const AdviceForm = () => {
       />
       <FinishButton />
       <Link to='/vaccination'>
-        <button className=' ml-[100%] mt-52 mb-20'>
+        <button className=' ml-[100%] mt-52 mb-20' onClick={onPrev}>
           <LeftArrow />
         </button>
       </Link>

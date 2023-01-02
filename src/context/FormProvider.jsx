@@ -4,7 +4,10 @@ export const FormContext = React.createContext();
 
 function FormProviderComponent({ children }) {
   const [formData, setFormData] = useState();
+  const [isNext, setIsNext] = useState(true);
 
+  const onNext = () => setIsNext(true);
+  const onPrev = () => setIsNext(false);
   const updateFields = (data) => {
     setFormData({ ...formData, ...data });
   };
@@ -27,7 +30,9 @@ function FormProviderComponent({ children }) {
       });
   };
   return (
-    <FormContext.Provider value={{ updateFields, sendForm, formData }}>
+    <FormContext.Provider
+      value={{ updateFields, sendForm, formData, isNext, onNext, onPrev }}
+    >
       {children}
     </FormContext.Provider>
   );
