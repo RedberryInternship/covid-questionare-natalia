@@ -94,14 +94,10 @@ src
    |-- pages
    |   |-- AdvicePage
    |   |   |-- Advice.jsx
-   |   |   |-- AdviceForm.jsx
-   |   |   |-- index.js
-   |   |   |-- useCheckAdviceInput.jsx
+   |   |-- CovidQuestionairePage
+   |   |   |-- CovidQuestionaire.jsx
    |   |-- PersonalInfoPage
    |   |   |-- PersonalInfo.jsx
-   |   |   |-- PersonalInfoForm.jsx
-   |   |   |-- index.js
-   |   |   |-- useCheckPersonalInfoInput.jsx
    |   |-- index.js
 tailwind.config.cjs
 vite.config.js
