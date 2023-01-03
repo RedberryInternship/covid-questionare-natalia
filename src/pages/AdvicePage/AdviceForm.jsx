@@ -6,13 +6,14 @@ import {
   LeftArrow,
 } from '@/components';
 import useCheckInput from './useCheckAdviceInput';
-import { Link, useHistory } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
 
 const AdviceForm = () => {
-  const { updateFields, formData, sendForm } = useContext(FormContext);
+  const { updateFields, sendForm, onPrev } = useContext(FormContext);
+  const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
     register,
@@ -23,23 +24,15 @@ const AdviceForm = () => {
     defaultValues: getItems,
   });
   useCheckInput(control);
-  const history = useHistory();
 
   return (
     <form
       onSubmit={handleSubmit((data) => {
         if (isValid) {
           updateFields(data);
-          console.log(formData);
           sendForm();
-          localStorage.clear(
-            'advice',
-            'vaccination',
-            'personalInfo',
-            'covidQuestionaire'
-          );
-
-          history.push('/thank-you');
+          localStorage.clear();
+          navigate('/thank-you');
         }
       })}
     >
@@ -150,7 +143,7 @@ const AdviceForm = () => {
       />
       <FinishButton />
       <Link to='/vaccination'>
-        <button className=' ml-[100%] mt-52 mb-20'>
+        <button className=' ml-[100%] mt-52 mb-20' onClick={onPrev}>
           <LeftArrow />
         </button>
       </Link>
