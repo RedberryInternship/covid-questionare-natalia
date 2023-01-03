@@ -25,9 +25,9 @@ const VaccinationForm = () => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => {
+      onSubmit={handleSubmit(() => {
         if (isValid) {
-          updateFields(data);
+          updateFields(getItems);
           navigate('/advice');
         }
       })}

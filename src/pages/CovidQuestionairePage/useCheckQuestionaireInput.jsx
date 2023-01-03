@@ -7,7 +7,7 @@ const useCheckQuestionaireInput = (control) => {
       'had_antibody_test',
       'antibodies.test_date',
       'antibodies.number',
-      'covid_date',
+      'covid_sickness_date',
     ],
   });
   localStorage.setItem(

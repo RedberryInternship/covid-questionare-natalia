@@ -6,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import { ErrorMessage } from '.';
 import { useNavigate } from 'react-router-dom';
 const PersonalInfoForm = (props) => {
-  const { updateFields, onNext } = useContext(FormContext);
+  const { onNext, updateFields } = useContext(FormContext);
 
   const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('personalInfo'));
@@ -25,10 +25,10 @@ const PersonalInfoForm = (props) => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => {
+      onSubmit={handleSubmit((e) => {
         if (isValid) {
-          updateFields(data);
           onNext();
+          updateFields(getItems);
           navigate('/covid-questionaire');
         }
       })}
