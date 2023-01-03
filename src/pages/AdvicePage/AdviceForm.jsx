@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
 
 const AdviceForm = () => {
-  const { updateFields, sendForm, onPrev } = useContext(FormContext);
+  const { onPrev, updateFields } = useContext(FormContext);
   const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
@@ -27,11 +27,9 @@ const AdviceForm = () => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => {
+      onSubmit={handleSubmit(() => {
         if (isValid) {
-          updateFields(data);
-          sendForm();
-          localStorage.clear();
+          updateFields(getItems, true);
           navigate('/thank-you');
         }
       })}

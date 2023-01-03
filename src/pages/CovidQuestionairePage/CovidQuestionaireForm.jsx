@@ -23,9 +23,9 @@ const CovidQuestionaireForm = () => {
 
   return (
     <form
-      onSubmit={handleSubmit((data) => {
+      onSubmit={handleSubmit(() => {
         if (isValid) {
-          updateFields(data);
+          updateFields(getItems);
           navigate('/vaccination');
         }
       })}
