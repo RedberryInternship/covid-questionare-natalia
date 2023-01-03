@@ -6,7 +6,7 @@ import { FormContext } from '@/context/FormProvider';
 import { ErrorMessage } from '@/components';
 import { useNavigate } from 'react-router-dom';
 const CovidQuestionaireForm = () => {
-  const { updateFields, formData } = useContext(FormContext);
+  const { updateFields } = useContext(FormContext);
   const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('covidQuestionaire'));
 
@@ -26,7 +26,6 @@ const CovidQuestionaireForm = () => {
       onSubmit={handleSubmit((data) => {
         if (isValid) {
           updateFields(data);
-          console.log(formData);
           navigate('/vaccination');
         }
       })}

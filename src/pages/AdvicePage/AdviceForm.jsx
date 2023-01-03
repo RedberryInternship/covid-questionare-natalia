@@ -12,7 +12,7 @@ import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
 
 const AdviceForm = () => {
-  const { updateFields, formData, sendForm, onPrev } = useContext(FormContext);
+  const { updateFields, sendForm, onPrev } = useContext(FormContext);
   const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
@@ -30,14 +30,8 @@ const AdviceForm = () => {
       onSubmit={handleSubmit((data) => {
         if (isValid) {
           updateFields(data);
-          console.log(formData);
           sendForm();
-          localStorage.clear(
-            'advice',
-            'vaccination',
-            'personalInfo',
-            'covidQuestionaire'
-          );
+          localStorage.clear();
           navigate('/thank-you');
         }
       })}
