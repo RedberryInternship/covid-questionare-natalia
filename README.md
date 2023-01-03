@@ -78,14 +78,7 @@ src
    |   |   |-- BookVaccinationNotification.jsx
    |   |   |-- Buttons.jsx
    |   |   |-- DateInput.jsx
-   |   |   |-- ErrorMessage.jsx
-   |   |   |-- FinishButton.jsx
-   |   |   |-- RadioInput.jsx
-   |   |   |-- TextAreaInput.jsx
-   |   |   |-- TextInput.jsx
-   |   |   |-- index.js
    |   |-- Icons
-   |   |   |-- header-logo.jsx
    |   |   |-- index.js
    |   |   |-- left-arrow.jsx
    |   |   |-- right-arrow.jsx
@@ -104,29 +97,11 @@ src
    |   |   |-- AdviceForm.jsx
    |   |   |-- index.js
    |   |   |-- useCheckAdviceInput.jsx
-   |   |-- CovidQuestionairePage
-   |   |   |-- CovidQuestionaire.jsx
-   |   |   |-- CovidQuestionaireForm.jsx
-   |   |   |-- index.js
-   |   |   |-- useCheckQuestionaireInput.jsx
    |   |-- PersonalInfoPage
    |   |   |-- PersonalInfo.jsx
    |   |   |-- PersonalInfoForm.jsx
    |   |   |-- index.js
    |   |   |-- useCheckPersonalInfoInput.jsx
-   |   |-- StartQuestionsPage
-   |   |   |-- StartQuestions.css
-   |   |   |-- StartQuestions.jsx
-   |   |   |-- index.js
-   |   |-- ThankYouPage
-   |   |   |-- ThankYou.css
-   |   |   |-- ThankYou.jsx
-   |   |   |-- index.js
-   |   |-- VaccinationPage
-   |   |   |-- Vaccination.jsx
-   |   |   |-- VaccinationForm.jsx
-   |   |   |-- index.js
-   |   |   |-- useCheckVaccinationInputs.jsx
    |   |-- index.js
 tailwind.config.cjs
 vite.config.js
