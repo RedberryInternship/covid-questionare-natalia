@@ -55,56 +55,26 @@ Survey contains 6 pages.</p>
 <section id="project-structure">
     <h2>Project Structure</h2>
     <pre>
-.eslintrc.json
-.gitignore
-.prettierrc.json
-index.html
-jsconfig.json
-package-lock.json
-package.json
-postcss.config.cjs
-public
-   |-- fonts
-   |   |-- bpg-arial-caps-webfont.ttf
-   |   |-- bpg_arial_2009.ttf
-   |-- logo.png
+
+
 src
-   |-- App.css
-   |-- App.jsx
-   |-- assets
-   |   |-- images
    |-- components
    |   |-- Form
-   |   |   |-- BookVaccinationNotification.jsx
    |   |   |-- Buttons.jsx
    |   |   |-- DateInput.jsx
-   |   |-- Icons
-   |   |   |-- index.js
-   |   |   |-- left-arrow.jsx
-   |   |   |-- right-arrow.jsx
-   |   |-- Layout
-   |   |   |-- Layout.jsx
-   |   |   |-- index.js
    |   |-- index.js
    |-- context
    |   |-- FormProvider.jsx
    |   |-- index.js
-   |-- index.css
-   |-- main.jsx
    |-- pages
    |   |-- AdvicePage
    |   |   |-- Advice.jsx
    |   |   |-- AdviceForm.jsx
-   |   |   |-- index.js
-   |   |   |-- useCheckAdviceInput.jsx
    |   |-- PersonalInfoPage
    |   |   |-- PersonalInfo.jsx
    |   |   |-- PersonalInfoForm.jsx
-   |   |   |-- index.js
-   |   |   |-- useCheckPersonalInfoInput.jsx
    |   |-- index.js
-tailwind.config.cjs
-vite.config.js
+
 </section>
 
 <section id="resources">
