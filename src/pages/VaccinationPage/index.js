@@ -1,2 +1,2 @@
-export { default as VaccinationForm } from './VaccinationForm';
+export * from './components';
 export { default as Vaccination } from './Vaccination';

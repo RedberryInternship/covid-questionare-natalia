@@ -1,25 +1,22 @@
 import { RadioInput, Buttons, BookVaccinationNotification } from '@/components';
-import { useForm } from 'react-hook-form';
 import useCheckVaccinationInput from './useCheckVaccinationInputs';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
 import { useNavigate } from 'react-router-dom';
+import { useForms } from '@/hooks';
 
 const VaccinationForm = () => {
   const { updateFields } = useContext(FormContext);
   const navigate = new useNavigate();
-
   const getItems = JSON.parse(localStorage.getItem('vaccination'));
 
   const {
     register,
-    handleSubmit,
     control,
+    handleSubmit,
     formState: { errors, isValid },
-  } = useForm({
-    defaultValues: getItems,
-  });
+  } = useForms(getItems);
 
   const checkRadio = useCheckVaccinationInput(control);
 

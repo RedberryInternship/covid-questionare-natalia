@@ -1,10 +1,10 @@
-import { useForm } from 'react-hook-form';
 import { Buttons, DateInput, RadioInput, TextInput } from '@/components';
-import useCheckQuestionaireInput from './useCheckQuestionaireInput';
+import { useCheckQuestionaireInput } from '.';
 import { useContext } from 'react';
 import { FormContext } from '@/context/FormProvider';
 import { ErrorMessage } from '@/components';
 import { useNavigate } from 'react-router-dom';
+import { useForms } from '@/hooks';
 const CovidQuestionaireForm = () => {
   const { updateFields } = useContext(FormContext);
   const navigate = new useNavigate();
@@ -12,12 +12,10 @@ const CovidQuestionaireForm = () => {
 
   const {
     register,
-    handleSubmit,
     control,
+    handleSubmit,
     formState: { errors, isValid },
-  } = useForm({
-    defaultValues: getItems,
-  });
+  } = useForms(getItems);
 
   const checkRadio = useCheckQuestionaireInput(control);
 

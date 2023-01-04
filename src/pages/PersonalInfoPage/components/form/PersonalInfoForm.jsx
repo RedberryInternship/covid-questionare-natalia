@@ -2,24 +2,20 @@ import { RightArrow, TextInput } from '@/components';
 import useCheckPersonalInfoInput from './useCheckPersonalInfoInput';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
-import { useForm } from 'react-hook-form';
-import { ErrorMessage } from '.';
+import { ErrorMessage } from '@/components';
 import { useNavigate } from 'react-router-dom';
+import { useForms } from '@/hooks';
 const PersonalInfoForm = (props) => {
   const { onNext, updateFields } = useContext(FormContext);
-
   const navigate = new useNavigate();
   const getItems = JSON.parse(localStorage.getItem('personalInfo'));
 
   const {
     register,
-    handleSubmit,
     control,
+    handleSubmit,
     formState: { errors, isValid },
-  } = useForm({
-    defaultValues: getItems,
-    mode: 'all',
-  });
+  } = useForms(getItems);
 
   useCheckPersonalInfoInput(control);
 

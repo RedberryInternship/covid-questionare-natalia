@@ -1,4 +1,3 @@
-import { useForm } from 'react-hook-form';
 import {
   RadioInput,
   TextAreaInput,
@@ -10,6 +9,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
+import { useForms } from '@/hooks';
 
 const AdviceForm = () => {
   const { onPrev, updateFields } = useContext(FormContext);
@@ -17,12 +17,11 @@ const AdviceForm = () => {
   const getItems = JSON.parse(localStorage.getItem('advice'));
   const {
     register,
-    handleSubmit,
     control,
+    handleSubmit,
     formState: { errors, isValid },
-  } = useForm({
-    defaultValues: getItems,
-  });
+  } = useForms(getItems);
+
   useCheckInput(control);
 
   return (

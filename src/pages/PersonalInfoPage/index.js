@@ -1,3 +1,2 @@
 export { default as PersonalInfo } from './PersonalInfo';
-export { default as PersonalInfoForm } from './PersonalInfoForm';
-export { default as ErrorMessage } from '../../components/Form/ErrorMessage';
+export * from './components';

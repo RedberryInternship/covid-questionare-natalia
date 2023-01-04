@@ -1,5 +1,5 @@
 import { Layout } from '@/components/Layout';
-import PersonalInfoForm from './PersonalInfoForm';
+import PersonalInfoForm from './components/form/PersonalInfoForm';
 import identificationPageNum from '@/assets/images/identification-page-num.png';
 import identificationImage from '@/assets/images/identification-image.png';
 import Rectangle from '@/assets/images/rectangle.png';
