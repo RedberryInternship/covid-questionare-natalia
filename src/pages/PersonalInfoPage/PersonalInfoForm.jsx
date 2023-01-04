@@ -41,8 +41,8 @@ const PersonalInfoForm = (props) => {
         register={register('first_name', {
           required: 'სახელის ველის შევსება სავალდებულოა',
           minLength: {
-            value: 3,
-            message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
+            value: 2,
+            message: 'სახელის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
           },
         })}
       />
@@ -55,8 +55,8 @@ const PersonalInfoForm = (props) => {
         register={register('last_name', {
           required: 'გვარის ველის შევსება სავალდებულოა',
           minLength: {
-            value: 3,
-            message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 3 სიმბოლოსგან',
+            value: 2,
+            message: 'გვარის ველი უნდა შედგებოდეს მინიმუმ 2 სიმბოლოსგან',
           },
         })}
       />
