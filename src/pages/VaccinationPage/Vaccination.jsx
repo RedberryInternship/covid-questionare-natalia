@@ -12,7 +12,7 @@ const Vaccination = () => {
   return (
     <Layout pageNumber={VaccinationPageNum}>
       <VaccinationForm />
-      <img src={Doctor} alt='Doctor' className=' mt-10' />
+      <img src={Doctor} alt='Doctor' className=' mt-10 z-20' />
       <motion.img
         src={Star}
         alt='star'
@@ -22,7 +22,7 @@ const Vaccination = () => {
             ? { opacity: 0, top: 365, right: 780 }
             : { opacity: 0, top: 230, right: 500 }
         }
-        animate={{ opacity: 0.7, top: 160, right: 660 }}
+        animate={{ opacity: 1, top: 160, right: 660 }}
         transition={{ duration: 0.5 }}
       />
     </Layout>
