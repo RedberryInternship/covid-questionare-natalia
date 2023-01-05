@@ -34,6 +34,7 @@ const VaccinationForm = () => {
         register={register('had_vaccine', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='vaccineYes'
         name='had_vaccine'
         radioContent='კი'
         value='true'
@@ -42,6 +43,7 @@ const VaccinationForm = () => {
         register={register('had_vaccine', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='vaccineNo'
         name='had_vaccine'
         radioContent='არა'
         value='false'
@@ -55,6 +57,7 @@ const VaccinationForm = () => {
             register={register('vaccination_stage', {
               required: 'ველის შევსება სავალდებულოა',
             })}
+            id='first_dose'
             name='vaccination_stage'
             radioContent='პირველი დოზა და დარეგისტრირებული ვარ მეორეზე'
             value='first_dosage_and_registered_on_the_second'
@@ -63,6 +66,7 @@ const VaccinationForm = () => {
             register={register('vaccination_stage', {
               required: 'ველის შევსება სავალდებულოა',
             })}
+            id='vaccinated'
             name='vaccination_stage'
             radioContent='სრულად აცრილი ვარ'
             value='fully_vaccinated'
@@ -71,6 +75,7 @@ const VaccinationForm = () => {
             register={register('vaccination_stage', {
               required: 'ველის შევსება სავალდებულოა',
             })}
+            id='not_registered'
             name='vaccination_stage'
             radioContent='პირველი დოზა და არ დავრეგისტრირებულვარ მეორეზე'
             value='first_dosage_and_not_registered_yet'
@@ -84,6 +89,7 @@ const VaccinationForm = () => {
             register={register('i_am_waiting', {
               required: 'ველის შევსება სავალდებულოა',
             })}
+            id='registered'
             name='i_am_waiting'
             radioContent='დარეგისტრირებული ვარ და ველოდები რიცხვს'
             value='registered_and_waiting'
@@ -92,6 +98,7 @@ const VaccinationForm = () => {
             register={register('i_am_waiting', {
               required: 'ველის შევსება სავალდებულოა',
             })}
+            id='not_planned'
             name='i_am_waiting'
             radioContent='არ ვგეგმავ'
             value='not_planning'
@@ -100,6 +107,7 @@ const VaccinationForm = () => {
             register={register('i_am_waiting', {
               required: 'ველის შევსება სავალდებულოა',
             })}
+            id='planned'
             name='i_am_waiting'
             radioContent='გადატანილი მაქვს და ვგეგმავ აცრას'
             value='had_covid_and_planning_to_be_vaccinated'

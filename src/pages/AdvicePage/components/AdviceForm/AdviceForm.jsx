@@ -49,6 +49,7 @@ const AdviceForm = () => {
         register={register('non_formal_meetings', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='twice'
         name='non_formal_meetings'
         radioContent='კვირაში ორჯერ'
         value='twice_a_week'
@@ -57,6 +58,7 @@ const AdviceForm = () => {
         register={register('non_formal_meetings', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='once'
         name='non_formal_meetings'
         radioContent='კვირაში ერთხელ'
         value='once_a_week'
@@ -65,6 +67,7 @@ const AdviceForm = () => {
         register={register('non_formal_meetings', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='once_in_a_two_weeks'
         name='non_formal_meetings'
         radioContent='ორ კვირაში ერთხელ'
         value='once_in_a_two_weeks'
@@ -73,6 +76,7 @@ const AdviceForm = () => {
         register={register('non_formal_meetings', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='once_in_a_month'
         name='non_formal_meetings'
         radioContent='თვეში ერთხელ'
         value='once_in_a_month'
@@ -86,6 +90,7 @@ const AdviceForm = () => {
         register={register('number_of_days_from_office', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='one'
         name='number_of_days_from_office'
         radioContent='1'
         value='1'
@@ -94,6 +99,7 @@ const AdviceForm = () => {
         register={register('number_of_days_from_office', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='two'
         name='number_of_days_from_office'
         radioContent='2'
         value='2'
@@ -102,6 +108,7 @@ const AdviceForm = () => {
         register={register('number_of_days_from_office', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='three'
         name='number_of_days_from_office'
         radioContent='3'
         value='3'
@@ -110,6 +117,7 @@ const AdviceForm = () => {
         register={register('number_of_days_from_office', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='four'
         name='number_of_days_from_office'
         radioContent='4'
         value='4'
@@ -118,6 +126,7 @@ const AdviceForm = () => {
         register={register('number_of_days_from_office', {
           required: 'ველის შევსება სავალდებულოა',
         })}
+        id='five'
         name='number_of_days_from_office'
         radioContent='5'
         value='5'
