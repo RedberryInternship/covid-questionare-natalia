@@ -1,5 +1,5 @@
 import { useWatch } from 'react-hook-form';
-const useCheckAdviceInput = (control) => {
+const useAdviceForm = (control) => {
   const checkInputs = useWatch({
     control,
     name: [
@@ -21,4 +21,4 @@ const useCheckAdviceInput = (control) => {
   return checkInputs;
 };
 
-export default useCheckAdviceInput;
+export default useAdviceForm;
