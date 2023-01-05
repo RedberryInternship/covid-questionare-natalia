@@ -10,10 +10,7 @@ const RadioInput = ({ id, name, radioContent, register, value }) => {
           value={value}
           className='radio-button appearance-none w-6 h-6 rounded-full border border-solid border-black before:block before:w-[18px] before:h-[18px] before:m-[2px] before:content-[""] before:rounded-full checked:before:bg-black '
         />
-        <label
-          htmlFor={id}
-          className='ml-5 text-xl font-normal text-gray-900 dark:text-gray-300'
-        >
+        <label htmlFor={id} className='ml-5 text-xl font-normal text-gray-900'>
           {radioContent}
         </label>
       </div>
