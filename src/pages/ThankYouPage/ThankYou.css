@@ -17,8 +17,7 @@
 
     }
     100% {
-        margin-left: 320px;
-        margin-top: 130px;
+        transform: translate(480%, 200%);
         visibility: visible;
     }
 }
@@ -28,8 +27,7 @@
         
     }
     100% {
-        margin-right: 300px;
-        margin-bottom: 150px;
+        transform: translate(-300%, -180%);
         visibility: visible;
     }
 }
