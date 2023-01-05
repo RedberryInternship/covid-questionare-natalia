@@ -1,5 +1,5 @@
 import { Layout } from '@/components';
-import VaccinationForm from './VaccinationForm';
+import VaccinationForm from './components/form/VaccinationForm';
 import VaccinationPageNum from '@/assets/images/vaccination-page-num.png';
 import Doctor from '@/assets/images/doctor.png';
 import Star from '@/assets/images/star.png';
