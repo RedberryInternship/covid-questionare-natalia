@@ -1,1 +1,1 @@
-export * from './CovidQuestionaireFOrm';
+export * from './CovidQuestionaireForm';
