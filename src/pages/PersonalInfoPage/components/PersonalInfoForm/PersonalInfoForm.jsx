@@ -71,7 +71,7 @@ const PersonalInfoForm = (props) => {
         })}
       />
       <ErrorMessage errorMessage={errors.email?.message} />
-      <button type='submit' className='absolute left-[52%] bottom-16'>
+      <button type='submit' className='absolute left-[52%] bottom-16 z-40'>
         <RightArrow />
       </button>
     </form>

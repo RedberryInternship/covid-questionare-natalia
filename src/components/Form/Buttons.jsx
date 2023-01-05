@@ -9,14 +9,14 @@ const Buttons = ({ link }) => {
   return (
     <>
       <NavLink to={link}>
-        <button className='absolute left-[45%] bottom-16' onClick={onPrev}>
+        <button className='absolute left-[45%] bottom-16 z-40' onClick={onPrev}>
           <LeftArrow />
         </button>
       </NavLink>
 
       <button
         type='submit'
-        className='absolute left-[52%] bottom-16'
+        className='absolute left-[52%] bottom-16 z-40'
         onClick={onNext}
       >
         <RightArrow />
