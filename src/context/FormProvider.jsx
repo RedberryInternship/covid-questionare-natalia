@@ -5,6 +5,8 @@ export const FormContext = React.createContext();
 function FormProviderComponent({ children }) {
   const [formData, setFormData] = useState({});
   const [isNext, setIsNext] = useState(true);
+  const [finish, setFinish] = useState(false);
+
   const [sendDataState, setSendDataState] = useState(false);
 
   const onNext = () => setIsNext(true);
@@ -44,6 +46,8 @@ function FormProviderComponent({ children }) {
     })
       .then((response) => {
         localStorage.clear();
+        setFinish(false);
+
         return response.text();
       })
       .catch((error) => {
@@ -60,6 +64,8 @@ function FormProviderComponent({ children }) {
         isNext,
         onNext,
         onPrev,
+        setFinish,
+        finish,
       }}
     >
       {children}
