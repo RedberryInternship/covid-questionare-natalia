@@ -1,6 +1,6 @@
 import { Layout } from '@/components';
 import questionsPageNum from '@/assets/images/questions-page-num.png';
-import CovidQuestionaireForm from './components/form/CovidQuestionaireForm';
+import CovidQuestionaireForm from './components/CovidQuestionaireFOrm/CovidQuestionaireForm';
 import QuestionaireImage from '@/assets/images/questionaire-image.png';
 import Circle from '@/assets/images/circle.png';
 import { motion } from 'framer-motion';

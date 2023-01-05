@@ -4,7 +4,7 @@ import {
   FinishButton,
   LeftArrow,
 } from '@/components';
-import useCheckInput from './useCheckAdviceInput';
+import useCheckInput from './useAdviceForm';
 import { Link, useNavigate } from 'react-router-dom';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';

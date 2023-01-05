@@ -1,5 +1,5 @@
 import { Buttons, DateInput, RadioInput, TextInput } from '@/components';
-import { useCheckQuestionaireInput } from '.';
+import { useCovidQuestionaireForm } from '.';
 import { useContext } from 'react';
 import { FormContext } from '@/context/FormProvider';
 import { ErrorMessage } from '@/components';
@@ -17,7 +17,7 @@ const CovidQuestionaireForm = () => {
     formState: { errors, isValid },
   } = useForms(getItems);
 
-  const checkRadio = useCheckQuestionaireInput(control);
+  const checkRadio = useCovidQuestionaireForm(control);
 
   return (
     <form

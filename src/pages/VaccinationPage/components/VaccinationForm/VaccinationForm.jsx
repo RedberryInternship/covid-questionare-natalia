@@ -1,5 +1,5 @@
 import { RadioInput, Buttons, BookVaccinationNotification } from '@/components';
-import useCheckVaccinationInput from './useCheckVaccinationInputs';
+import useVaccinationForm from './useVaccinationForm';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
@@ -18,7 +18,7 @@ const VaccinationForm = () => {
     formState: { errors, isValid },
   } = useForms(getItems);
 
-  const checkRadio = useCheckVaccinationInput(control);
+  const checkRadio = useVaccinationForm(control);
 
   return (
     <form

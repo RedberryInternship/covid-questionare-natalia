@@ -1,5 +1,5 @@
 import { RightArrow, TextInput } from '@/components';
-import useCheckPersonalInfoInput from './useCheckPersonalInfoInput';
+import usePersonalInfoForm from './usePersonalInfoForm';
 import { FormContext } from '@/context/FormProvider';
 import { useContext } from 'react';
 import { ErrorMessage } from '@/components';
@@ -17,7 +17,7 @@ const PersonalInfoForm = (props) => {
     formState: { errors, isValid },
   } = useForms(getItems);
 
-  useCheckPersonalInfoInput(control);
+  usePersonalInfoForm(control);
 
   return (
     <form

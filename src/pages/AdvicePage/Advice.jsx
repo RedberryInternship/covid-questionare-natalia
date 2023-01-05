@@ -1,6 +1,6 @@
 import { Layout } from '@/components';
 import AdvicePageNum from '@/assets/images/advice-page-num.png';
-import AdviceForm from './components/form/AdviceForm';
+import AdviceForm from './components/AdviceForm/AdviceForm';
 import bike from '@/assets/images/bike.png';
 import Heart from '@/assets/images/heart.png';
 import { motion } from 'framer-motion';

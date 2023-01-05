@@ -1,5 +1,5 @@
 import { useWatch } from 'react-hook-form';
-const useCheckVaccinationInput = (control) => {
+const useVaccinationForm = (control) => {
   const checkRadio = useWatch({
     control,
     name: ['had_vaccine', 'vaccination_stage', 'i_am_waiting'],
@@ -15,4 +15,4 @@ const useCheckVaccinationInput = (control) => {
   return checkRadio;
 };
 
-export default useCheckVaccinationInput;
+export default useVaccinationForm;
