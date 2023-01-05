@@ -15,18 +15,24 @@ const CovidQuestionaire = () => {
       <img
         src={QuestionaireImage}
         alt='questionaire'
-        className='w-[57rem] -mt-5'
+        className='w-[57rem] -mt-5 z-20 '
       />
       <motion.img
         src={Circle}
         alt='red circle'
-        className='absolute'
+        className=' absolute'
         initial={
           isNext
-            ? { opacity: 0, top: 300, right: 600, width: 190 }
-            : { opacity: 0, top: 160, right: 660, width: 190 }
+            ? { opacity: 0, top: 300, right: 600, width: 190, height: 190 }
+            : { opacity: 0, top: 160, right: 660, width: 190, height: 190 }
         }
-        animate={{ opacity: 0.6, top: 365, right: 800, width: 230 }}
+        animate={{
+          opacity: 1,
+          top: 365,
+          right: 800,
+          width: 230,
+          height: 230,
+        }}
         transition={{ duration: 0.5 }}
       />
     </Layout>
